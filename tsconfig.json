@@ -2,7 +2,7 @@
     "compilerOptions": {
         "allowJs": true,
         "checkJs": true,
-        "target": "ES6",
+        "target": "ESNext",
         "outDir": "build",
         "noEmit": true
     },
