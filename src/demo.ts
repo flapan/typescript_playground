@@ -1,6 +1,6 @@
 interface Contact extends Partial<Address>{
     id: number;
-    name: string;
+    name: ContactName;
     birthDate?: Date;
 }
 
@@ -17,3 +17,4 @@ let primaryContact: Contact = {
     name: "Hugo Schiller"
 };
 
+type ContactName = string;
