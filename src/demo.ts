@@ -3,7 +3,6 @@ interface Contact extends Partial<Address>{
     name: ContactName;
     birthDate?: Date;
     status: ContactStatus;
-    clone(): Contact
 }
 
 enum ContactStatus{
