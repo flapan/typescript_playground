@@ -7,8 +7,14 @@ const todoItems = [
 interface todoItems {
     id: number;
     title: string;
-    status: string;
+    status: todoItemsEnum;
     completedOn?: Date;
+}
+
+enum todoItemsEnum {
+    Todo = "todo",
+    InProgress = "in-progress",
+    Done = "done"
 }
 
 function addTodoItem(todo) {
