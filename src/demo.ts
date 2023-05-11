@@ -2,7 +2,7 @@ interface Contact extends Partial<Address>{
     id: number;
     name: ContactName;
     birthDate?: Date;
-    status: ContactStatus;
+    status?: ContactStatus;
 }
 
 enum ContactStatus{
@@ -19,7 +19,7 @@ interface Address {
 }
 
 let primaryContact: Contact = {
-    birthDate: new Date("20-12-2018"),
+    birthDate: new Date("02-12-2018"),
     id: 4,
     name: "Hugo Schiller",
     status: ContactStatus.Active
@@ -27,10 +27,16 @@ let primaryContact: Contact = {
 
 type ContactName = string;
 
-function clone(source: Contact): Contact {
+function clone<T>(source: T): T {
     return Object.apply({}, source);
 }
 
 function cloneWithFuncParam(func: (source: Contact) => Contact): Contact {
     return
 }
+
+const a: Contact = { id: 123, name: "Homer Simpson"};
+const b = clone(a);
+
+const dateRange = { startDate: Date.now(), endDate: Date.now() };
+const dateRangeCopy = clone(dateRange);
