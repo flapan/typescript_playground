@@ -4,6 +4,13 @@ const todoItems = [
     { id: 3, title: "Write the best app in the world", status: "todo" },
 ]
 
+interface todoItems {
+    id: number;
+    title: string;
+    status: string;
+    completedOn?: Date;
+}
+
 function addTodoItem(todo) {
     const id = getNextId(todoItems)
 
