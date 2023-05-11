@@ -4,7 +4,7 @@ const todoItems = [
     { id: 3, title: "Write the best app in the world", status: "todo" },
 ]
 
-interface todoItems {
+interface todoItem {
     id: number;
     title: string;
     status: todoItemsEnum;
@@ -17,13 +17,13 @@ enum todoItemsEnum {
     Done = "done"
 }
 
-function addTodoItem(todo) {
+function addTodoItem(todo: string): todoItem {
     const id = getNextId(todoItems)
 
     const newTodo = {
-        id,
+        id: id,
         title: todo,
-        status: "todo",
+        status: todoItemsEnum.Todo,
     }
 
     todoItems.push(newTodo)
