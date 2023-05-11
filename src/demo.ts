@@ -1,7 +1,9 @@
-interface Contact extends Partial<Address>{
+type ContactBirthDate = Date | number | string
+
+interface Contact {
     id: number;
     name: ContactName;
-    birthDate?: Date;
+    birthDate?: ContactBirthDate;
     status?: ContactStatus;
 }
 
@@ -17,6 +19,8 @@ interface Address {
     state: string;
     postalcode: string;
 }
+
+type AddressableContact = Contact & Address
 
 let primaryContact: Contact = {
     birthDate: new Date("02-12-2018"),
