@@ -1,16 +1,12 @@
 type ContactBirthDate = Date | number | string
 
+type ContactStatus = "active" | "inactive" | "new"
+
 interface Contact {
     id: number;
     name: ContactName;
     birthDate?: ContactBirthDate;
     status?: ContactStatus;
-}
-
-enum ContactStatus{
-    Active = "active",
-    Inactive = "inactive",
-    New = "new"
 }
 
 interface Address {
@@ -26,7 +22,7 @@ let primaryContact: Contact = {
     birthDate: new Date("02-12-2018"),
     id: 4,
     name: "Hugo Schiller",
-    status: ContactStatus.Active
+    status: "active"
 };
 
 type ContactName = string;
