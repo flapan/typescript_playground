@@ -25,6 +25,13 @@ let primaryContact: Contact = {
     status: "active"
 };
 
+type ContactFields = keyof Contact
+
+function getValue<T, U extends keyof T>(source: T, propertyName: U) {
+    return source[propertyName];
+}
+
+
 type ContactName = string;
 
 function clone<T>(source: T): T {
@@ -40,3 +47,6 @@ const b = clone(a);
 
 const dateRange = { startDate: Date.now(), endDate: Date.now() };
 const dateRangeCopy = clone(dateRange);
+
+const d = getValue(a, "name");
+console.log(d);
